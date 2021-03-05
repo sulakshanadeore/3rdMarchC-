@@ -1,0 +1,36 @@
+Class Template
+Object---- store data
+using variables/properties
+Major Pillars of OOPs
+1) Abstraction--- hiding unnecessary data--- private,protected,internal and protected internal
+	Access specifiers-public,private,protected,internal and protected internal
+2) Inheritance---- Reusability of code--- 
+         1) MultiLevel---
+		Class A{}  
+		Class B:A{}
+		Class C:B{}
+
+	 2) Multiple---Class A:B,C--- this not supported in C# for multiple classes(Diamond problem)
+Class A:Interface1, Interface2 --- possible
+	   
+
+3) Polymorphism--- many forms ---- same method/functionality --- behaviour differs
+a) Overloading-- Same method name  with different signature in a single scope(class).
+  (number,type and sequence of parameters in the method name)
+Return type is not considered
+b)Constructor Overloading--- number,type and sequence-- 
+c)Overriding---(override)Same method name  with different signature in a inherited scope(class). It doesn't differ in the signature-- (type, sequence and number of parameters)
+
+
+
+4) Encapsulation---wrapping the code/functionality inside a method/function.
+                Hide the complexity of the code.
+
+---------------------------------------------------------------------------
+Minor Pillars of OOPs
+1) Strong Type Casting-- Objects of different types cannot be interchanged, 
+entity types must be enforced to their own types, and if it goes to different 
+types it must be in a very restricted way.
+		
+2) Persistance ---Storing or saving data for future use
+3) Concurrency--- performing several tasks in parallel or simultaneously
