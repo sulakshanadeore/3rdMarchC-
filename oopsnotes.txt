@@ -1,0 +1,100 @@
+Object Oriented Concepts
+------------------------
+
+static keyword-----  method usable directly on the class name
+
+Instance Methods-------- 
+  instance of class is needed to invoke the method
+
+
+
+Instance of Class --- Why --- How-------
+
+                       Why Object Oriented
+     1) Everything revolves around the object/entity
+           Employee--- details----- process------return the processed data
+                      Methods/Functions------ Procedural Paradigm---
+
+Code is given imprtance and data is not 
+In Object Oriented, data is important and code is reusable.
+	
+Reusability
+Data must be different for different objects and be processed differently we require to store them in a specialized way called objects.
+
+to create a object ------ multiple objects of the same type---
+                 Class first---- Create Template first
+As many copies of the template that u want--- template copies ---objects
+
+       Bakery---- Template of the cake(mould)-- 
+  ---------------------------------------------
+     bake as many cakes u want
+
+class Employee
+{
+empid,ename,sal,deptno,mgr,city
+
+}
+emp1----> empid=1,ename="Sulakshana",sal=8888888,deptno=10,mgr=89,city="Pune"
+emp2----> empid=2,ename="Jack",sal=777777,deptno=20,mgr=73,city="Mumbai"
+
+emp1 & emp2 are objects of Employee
+ie . emp1 and emp2 are typeof Employee Class
+
+int i;<--- struct
+Employee emp1=new Employee();
+emp1.empid=1;
+Employee emp3=new Employee();
+emp3.empid=2;
+
+emp1.Equals(emp2);
+
+The object emp1 is of type Employee
+Employee emp2=emp1;
+cw(emp2.empid etc)
+-----------------------------------------------------------------------------
+class Emp
+{
+empid,ename,sal,deptno,mgr,city,State
+
+}
+
+emp3----->empid=3,ename="Jim",sal=777777,deptno=20,mgr=73,city="Mumbai",State="MH"
+
+emp3 is objects of Emp
+emp3 is typeof Emp Class
+---------------------------------------
+
+== vs Equals()
+== is a comparision operator
+equals---- compares the contents, also types of it
+
+-----------------------------------------
+
+Property---- getter /setter blocks of code-- smart methods---single name
+Types---1)read---get/write-set
+         2) read only-----get
+         3) write only----set
+
+         
+
+
+
+Take input--- method
+
+Validate----if 
+
+Process-----
+
+Output---return
+----------------------
+
+
+
+
+
+
+
+   
+   	
+
+
