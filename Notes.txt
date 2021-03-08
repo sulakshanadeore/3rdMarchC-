@@ -1,0 +1,3 @@
+﻿Arrays--- a collection of similar elements
+
+Array
