@@ -1,0 +1,27 @@
+﻿Serialization
+It is a process of persisting(write) the data to a file as a object, 
+reading it back- Deserialization
+
+For serialization:
+
+1) Class must be marked as Serializable(), using the attribute
+
+[Serilizable()]
+Class Customer
+{
+
+
+}
+
+this gives the right to the object to be written to a file.
+2) If a certain property value must be ignored while writing the 
+object data to the file, that property VARIABLE must be marked as 
+[NonSerialized()]
+
+
+Types of Serialization
+1)XML--- using System.Xml.Serialization
+2)Binary--- using System.Runtime.Serialization.Formatters.Binary
+3)Json---using System.Text.Json
+
+
