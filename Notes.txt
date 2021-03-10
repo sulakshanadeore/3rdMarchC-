@@ -1,0 +1,24 @@
+﻿Custom Attributes
+-----------------
+
+Extra info to the class or to any element of the program.
+class
+property
+event
+delegate
+struct
+enum
+
+Built-in Attributes
+Serializable----Class
+NonSerialized----Variable of the Property/Backing field
+
+1) Inheriting from Attribute is Compulsory
+
+EmployeeAttribute: Attribute-- direct inherits
+
+DeptAttribute:EmployeeAttribute----indirect inherits
+
+2) Every attribute name must suffix 'Attribute' keyword
+3) Parameterised Constructor for passing values 
+4) AttributeUsage Attribute----
