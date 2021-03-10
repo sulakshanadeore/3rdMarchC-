@@ -1,0 +1,50 @@
+﻿Events & Delegates
+------------------
+Delegates--- Why,What & How?
+What are Delegates?
+Delegates type safe function pointers.
+
+function----functionality
+
+(Address)pointer--->point--->functionality
+
+delegate----->address of the functionality
+type safe----- > Generics
+List<int> ----> only ints
+delegate---- typesafe function pointer---->
+(Delegates)they will allow you to point to the function 
+if the delegate signature matches the function signature.
+
+Where to use Delegates?
+1)Event handling
+2)call backs
+3)multi-threading
+4)function lambdas & action lambdas are based on delegates
+
+Why?
+1) They are type safe
+2) No Dangling pointers
+
+How?
+delegate  is a keyword-- System
+It is a reference type
+
+public void m1(int i,int j){}
+public delegate void d1(int i,int j);
+
+public float returnData(string custname);
+public delegate float d1(string customername);
+
+Where to declare a delegate?
+1) inside the class
+2) outside the class(inside the namespace)
+
+Types---
+1) Unicast--- points to single method
+2) Multicast----points to multiple methods----return type of 
+multicast delegate is always void
+
+
+
+
+
