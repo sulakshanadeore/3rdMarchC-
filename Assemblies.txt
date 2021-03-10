@@ -1,0 +1,29 @@
+﻿classLibrary--- dll
+Assembly---dll/exe
+Assembly----exe(Application)
+
+
+----------------------------
+Assembly Types
+==============
+a) Private Assembly----2MB---code----5Apps-----10MB +5 MB
+b) Public Assembly/Shared Assembly---- GAC 
+2MB---code----5 Apps---- SharedLocation(GAC---Global Assembly Cache)------
+Put code in the shared location:
+================================
+1) Sign the assembly
+
+2) Strong name key file for the assembly
+Properties------ Signing Tab----Sign the Assembly is checkbox to be made true
+choose strong name key file---
+extension MUST BE (.snk)
+ Build the assembly.
+
+3) register it into GAC---- 
+Developer Command Prompt---- Admin Mode-- 
+gacutil -i "D:\Sulakshana\IBMC#\EventsDelegatesDemo\DelegatesDemo\bin\Debug\DelegatesDemo.dll"
+
+GAC Location----- C:\Windows\Microsoft.NET\assembly\GAC_MSIL\Find your dll file
+
+-----------------------------------------------------------------------------
+c) Satellite Assembly------Language Assemblies--
