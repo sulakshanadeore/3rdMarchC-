@@ -1,0 +1,125 @@
+
+
+		ASP.NET
+-----------------------------------------------
+ASP.NET is server side programming technology
+(Client-Server Architecture)/language(C#,etc....)
+
+
+lanuguage used---- (C#), Vb.net,J#...etc
+
+	Client--Server
+	communication happens between client and server
+client sends a request & server answers the request with a response
+    Client- request & Server- response
+
+anyone(any device) who is connected to the server by a address
+
+User --- client of google--- google Server
+
+client machine (browser)---- understands only html
+server response(converted to html) and sent to the client
+
+The client takes the html and builds a html page with the content.
+when page is created, it is called as DOM(Document Object Model)
+window-----page----head----- title
+		   body----- form, p,div...etc
+
+client address--- server address
+protocol----(http/s)-----request---(server address on the envelope)-----response(client address on the envelope).
+
+http---Hyper Text Transfer Protocol
+
+stateless protocol
+a client send request---response to client a
+
+server--- who was the client whom it sent the response and also doesn't remember what was it about.
+current request--- HttpContext
+HttpRequest
+HttpResponse
+----------------------------------
+
+ Server----- IIS Express---- development server--
+IIS Express---- Windows Service---- developement server
+starts and stops automatically---- 
+--------------------------------------
+Web Forms
+static website/webpage----no interaction with the user
+wikipedia,article,aboutus
+
+
+dynamic websites---- 
+interaction between user(client) and server(application is running)-----(db server)
+event driven----event is a notification to invoke the delegate and the method underlying it
+       click,move,right click, change etc....
+UI(User Interface),data driven----insert,update,delete,list,etc for data in the tables
+
+authentication---checking whether  the credentials are  valid or invalid--- 
+
+     valid---- emails to your account(db)
+Inbox-
+          to from subject description attachement 
+
+application server--- arrange the data in the html table----sent to the user
+---------------------------------------------------
+Page Directive---- the directions on which the page/webform will run
+Attribute--- Language---- C#
+AutoEventWireUp------
+CodeBehind--- filename where C# code will be written
+     UI   code
+     html--- C#----
+		-----file----filename 
+
+
+
+public delegage void d1(int i, int j);
+public event d1 eventname;
+
+
+public  void m1(int i, int j)
+{
+
+
+}
+----------------------------------------
+
+3 labels--- enter no1  &enter no2 & answer
+3 textbox-----txtno1, txtno2,txtno3
+
+4 buttons--add ,sub,mul,divide
+add{
+int i=convert.toin32(t1.text)
+int j=convert.toin32(t2.text)
+int k=i+j;
+txtno3.Text=k.ToString();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
