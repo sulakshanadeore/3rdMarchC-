@@ -1,0 +1,57 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MySite.master.cs" Inherits="MasterPagesDemo.MySite" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    
+    <style type="text/css">
+        .auto-style1 {
+            width: 100%;
+        }
+        .auto-style2 {
+            width: 206px;
+        }
+    </style>
+    
+</head>
+<body>
+         <form id="form1" runat="server">
+         
+    <table class="auto-style1">
+        
+        <tr style="background-color:red;height:10px;width:auto;padding:10px">
+            <td>
+                <asp:Image ID="Image1" runat="server" ImageUrl="~/bunny1.jpg" Width="20px" />
+            </td>
+            <td >
+                <asp:Label ID="Label1" 
+                    runat="server" 
+                    Font-Bold="True" 
+                    Font-Size="Larger" 
+                    ForeColor="#3366FF" Text="ABC LTD."></asp:Label>
+            </td>
+        </tr>
+        <tr id="main">
+            <td>
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+                </asp:ContentPlaceHolder>
+            </td>
+            <td>
+           
+        <div >
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+                    
+    </td>
+        </tr>
+        <tr>
+            <td colspan="2">Copyright 2021. All rights reserved.</td>
+        </tr>
+        
+    </table>
+             </form>
+</body>
+</html>

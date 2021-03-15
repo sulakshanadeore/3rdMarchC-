@@ -1,0 +1,12 @@
+﻿Master Pages
+-----------
+Page Layout---
+header
+
+content
+
+footer
+Master Pages as template to pages
+Class--- template
+create/apply object to the newly created web form.
+
