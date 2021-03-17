@@ -1,0 +1,27 @@
+﻿@model MVCFirstWebApplication.Models.Cust
+@{
+    ViewBag.Title = "DeleteCustomer";
+}
+
+<h2>DeleteCustomer</h2>
+
+<form method="post">
+    <fieldset>
+        <legend>R u sure to delete this  Customer</legend>
+        <label>Customer ID </label>
+        <br />
+        @Html.EditorFor(model => model.CustomerID)
+        <br />
+        <label>Customer Name </label>
+        <br />
+        @Html.EditorFor(model => model.CustomerName)
+        <br />
+        <label>Customer city </label>
+        <br />
+        @Html.EditorFor(model => model.CustomerCity)
+        <br />
+        <input type="submit" name="DeleteCustomer" value="Delete" />
+
+    </fieldset>
+
+</form>

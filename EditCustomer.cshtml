@@ -1,0 +1,27 @@
+﻿@model MVCFirstWebApplication.Models.Cust
+@{
+    ViewBag.Title = "EditCustomer";
+}
+
+<h2>EditCustomer</h2>
+
+<form method="post">
+    <fieldset>
+        <legend>Edit Customer</legend>
+        <label>Customer ID </label>
+        <br />
+        @Html.EditorFor(model => model.CustomerID)
+        <br />
+        <label>Customer Name </label>
+        <br />
+        @Html.EditorFor(model => model.CustomerName)
+        <br />
+        <label>Customer city </label>
+        <br />
+        @Html.EditorFor(model => model.CustomerCity)
+        <br />
+        <input type="submit" name="EditCustomer" value="Save Changes" />
+
+    </fieldset>
+
+</form>

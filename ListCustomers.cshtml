@@ -1,0 +1,45 @@
+﻿@model IEnumerable<MVCFirstWebApplication.Models.Cust>
+
+@{
+    ViewBag.Title = "ListCustomers";
+}
+
+<h2>ListCustomers</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CustomerID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CustomerName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CustomerCity)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CustomerID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CustomerName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CustomerCity)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditCustomer", new {  id=item.CustomerID }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "DeleteCustomer", new {  id=item.CustomerID })
+        </td>
+    </tr>
+}
+
+</table>

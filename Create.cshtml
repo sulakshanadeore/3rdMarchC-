@@ -1,0 +1,26 @@
+﻿@model MVCFirstWebApplication.Models.Cust
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+<form method="POST">
+    <fieldset>
+        <lengend>Create Customer</lengend>
+        @Html.DisplayFor(model => model.CustomerID)
+        <br />
+        @Html.EditorFor(model => model.CustomerID)
+        <br />
+        @Html.DisplayFor(model => model.CustomerName)
+        <br />
+        @Html.EditorFor(model => model.CustomerName)
+        <br />
+        @Html.DisplayFor(model => model.CustomerCity)
+        <br />
+        @Html.EditorFor(model => model.CustomerCity)
+        <br />
+        <input type="submit" name="Create" value="Create" />
+    </fieldset>
+</form>
+
