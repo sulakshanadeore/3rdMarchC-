@@ -1,0 +1,91 @@
+MVC also the state mgt techniques:
+1)Cookies
+2)QueryStrings
+3)HiddenFields
+4)ViewState
+5)Session
+6)Application
+
+
+ GET--- 
+ POST---
+		Controller{
+	CreateProduct()
+	{
+		return View();	
+	}
+	[HttpPost]
+	CreateProduct(Product p)
+	{
+         list.Add(p);
+	  Create the cookie------
+		HttpCookie cookie=new HttpCookie("cookie1");
+		cookies.Values.Add("prodid",p.Prodid);
+		cookies.Values.Add("prodname",p.ProdName);
+		cookie.Expires=DateTime.Now.AddMinutes(5);
+		Response.Cookies.Add(cookie);
+		
+	 return RedirectToAction("Index");	
+	
+	}
+
+	Index()
+	{
+		using cookie
+		HttpCookie c=Request.Cookies["cookie1"];
+		string prodid=c["prodid"].ToString();
+		string prodname=c["prodname"].ToString();
+
+	//ShowData fetching it from Cookie
+	
+	}
+
+	
+		}
+--------------------------------------------
+View
+
+
+
+
+
+When Passing the Controller to the View--- passing from one end  to another end ---
+		http--- 
+
+
+When passing the data from controller to View
+When passing the data from action to action in the same controller
+When passing the data from action to action in different controller
+
+State Mgt Techniques
+1)ViewData------ Controller-View. 
+		It uses dictionary object--- key-value pair.
+		It inherits from ViewDataDictionary.
+		
+	Once u create ViewData object, pass te value and make the redirection the value becomes null.
+The data of viewData is NOT VALID FOR NEXT SUBSEQUENT REQUEST.
+REQUIRES TYPECASTING
+	ViewData["data"]=123;
+		
+
+2)TempData:
+----------------------------------
+When passing the data from action to action in the same controller
+When passing the data from action to action in different controller
+----------------------------------
+
+	Dictionary object.
+	Tempdata inherits TempDataDictionary.
+	      It is used to transfer the data from one request to another request or we can say subsequent, if u read the data  from TempData  it  will get cleaned up.
+IF U DONOT READ THE DATA IN THE REDIRECTION PROCESS THEN YOU DATA IS AVAILBALE WITH THE SUBSEQUENT REQUEST.
+IF YOU R REDIRECTING AND U WANT TO HAVE DATA IN THAT REQUEST U HAVE TO USE THE keep() method.
+
+
+3)ViewBag : C to V
+	It uses dynamic property feature of C# 4.0
+	Wrapper around ViewData.
+        ViewBag DOESN'T REQUIRE TYPECASTING.
+		ViewBag.data=123;
+
+	
+		

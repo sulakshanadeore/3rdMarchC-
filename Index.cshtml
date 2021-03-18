@@ -1,0 +1,42 @@
+﻿@using MVCStateMgtDemo.Models;
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+@if (ViewData["myemplist"] != null)
+{
+    var emp = (Employee)ViewData["empdata"];
+    <h1>@emp.Empid</h1>
+    <h1>@emp.Empname</h1>
+    
+
+    <table>
+        <tr>
+            <th>Empid</th>
+            <th>Empname</th>
+
+        </tr>
+        @foreach (var item in (IEnumerable<Employee>)ViewData["myemplist"])
+        {
+         <tr>
+            <td>@item.Empid</td>
+            <td>@item.Empname</td>
+        </tr>
+        }
+    </table>
+    
+
+
+}
+else
+{
+    <h1>Nothing to print</h1>
+
+}
+
+<br/>
+<form method="post">
+    <input type="number" name="id" value="" />
+    <input type="submit" name="Index" value="Click to go to About" />
+</form>

@@ -1,0 +1,47 @@
+﻿@{
+    ViewBag.Title = "About";
+}
+<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>
+<hr />
+<h1>@ViewBag.greet</h1>
+
+<h2>
+    EmpData
+    @{
+        var emp = ViewBag.empdata;
+        <p>@emp.Empid</p>
+        <p>@emp.Empname</p>
+
+    }
+</h2>
+<br />
+<h3><u>Emplist</u></h3>
+
+
+<table>
+    <tr>
+        <th>Empid</th>
+        <th>Empname</th>
+
+    </tr>
+    @foreach (var item in ViewBag.myemplist)
+    {
+        <tr>
+            <td>@item.Empid</td>
+            <td>@item.Empname</td>
+        </tr>
+    }
+</table>
+<br />
+<h1>
+    Accessing the View Data of the Index
+</h1>
+
+@if(ViewData["message"] != null)
+{
+    <h1>@ViewData["message"].ToString()</h1>
+}
+
+  <h1>ViewData  is null</h1>
+
