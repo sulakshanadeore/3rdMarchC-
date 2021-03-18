@@ -68,5 +68,36 @@ namespace MVCStateMgtDemo.Controllers
 
             return View();
         }
+
+        public ActionResult Action1()
+        {
+
+            TempData["morningMessage"] = "Good morning";
+            return RedirectToAction("Action2");
+        }
+
+        public ActionResult Action2()
+        {
+            TempData.Keep();
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Action2(int id)
+        {
+
+            TempData.Keep();
+            return RedirectToAction("Action3");
+        }
+
+        public ActionResult Action3()
+        {
+            var data= TempData.Peek("morningMessage");
+            TempData["morningMessage"] = data;
+                
+            return View();
+        }
+
+
     }
 }
