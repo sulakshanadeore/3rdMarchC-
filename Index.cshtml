@@ -1,0 +1,26 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <form method="post">
+        <div style="background-color:red;height:auto;width:auto">
+            @Html.Partial("_Calculator")
+
+            Answer : @ViewBag.answer
+        </div>
+    </form>
+
+    <div> 
+        This is index view
+    </div>
+</body>
+</html>
