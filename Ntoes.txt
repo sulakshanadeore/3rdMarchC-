@@ -1,0 +1,118 @@
+﻿ADO.NET 
+is a feature library which allows you to connect and manage with any 
+data source.
+DATA SOURCE---- DB/ExcelFile
+
+				DB---- SQL SERVER/ORACLE/Access/MY SQL
+Connect--- I/U/D/SP/Functions from the  DB
+
+DB--- SQL SERVER--- DB----Northwind ----- 
+				types of objects---  Tables/views/Synonyms/Index
+							User Defined Functions/Procedures/Triggers
+Synonyms are allocated (nickname)
+create synonym EmpTer
+for EmployeeTerritories
+
+ConnectionString---
+connect--- SQL Server--- DBservername
+						Name of DB
+						 UserID/Pwd
+						Windows Authentication
+server=SPD\SQLEXPRESS;database=Northwind;Integrated Security=true
+DataSource=SPD\SQLEXPRESS;Initial Catalog=Northwind;
+Integrated Security=true;provider=System.Data.SqlClient
+
+
+Data Source=spd\sqlexpress;
+Initial Catalog=Northwind;Integrated Security=True
+-----------------------------------------------------------------
+2 Architectures--- ADO.NET
+1)Connected----- U remain connected to your server(DB server)
+2)Disconnected ------U connect/disconnect on requirement basis
+
+
+  Application---DB server--- 24*7-----I/U/D immediately take place on your data
+
+Every server--Pool Size--- (limit)-----
+       Pool Size--20--- only 20 people can remain connected to the DB server at 
+	   a given point of time
+	   20  connected to DB server
+	   21st person-----queue---- one of 20 person doesn't logout
+
+	   50 people--- 
+	   1)Increase Pool size
+	   2)H/w upgradation
+
+
+	   Disconnected Architecture--
+
+	   connect to the server---- make of copy of data u want--- disconnect
+	   what u will be connecting for?
+
+	   1) UI----- List of customers----- select 
+
+	   2) UI-----create customer------ insert
+	   
+	   3)UI-----edit customer-------update
+	   
+	   4) UI---- delete customer---- delete
+
+	        select query---- copy of the existing data-----
+			Insert/Update/Delete -------  to the list
+this list updated List--- connect the server-----submit the changes
+
+------------------------------------------------------------
+connected Architecture--- ConnectionString is must
+
+
+using System.Data.SqlClient;
+1)SqlConnection----------------specify cn string
+2)SqlCommand----------pass your query(S/I/U/D/Procedure/FunctionName)
+3)cn.Open();
+4)S-----ExecuteReader()
+  I/U/D/Procedure-----ExecuteNonQuery() is a method whcih executes ur command
+
+NonQuery---(not a query)=======  cmd.ExecuteNonQuery();
+
+Query---select--------cmd.ExecuteReader();(Select * from Emp)
+ExecuteReader() returns SqlDataReader to read the data which is executed by your 
+query
+SqlDataReader dr=cmd.ExecuteReader();
+SqlDataReader Class-- readonly/fwd only stream of data.
+read only one ROW at a time--- read that row---- 
+dr.Read();---1
+dr.Read();---2
+dr.Read();----7
+
+List<Employees> emplist=new Employees();
+while(dr.Read())
+{
+ Employee emp=new Employee();
+ emp.Empid=Convert.Int32(dr["Empid"]);
+ emp.Empname=dr["Empname"].ToString();
+ emp.JoiningDate=Convert.ToDateTime(dr["Hiredate"]);
+ emplist.Add(emp)
+
+}
+return emplist();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+server=SPD\SQLEXPRESS;database=Northwind;Userid=sa;Password=sa;
+
+
+
