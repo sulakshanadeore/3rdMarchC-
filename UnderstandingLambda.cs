@@ -90,6 +90,16 @@ namespace ObjectLINQDemo
             }
 
 
+            var a = students.Find(s => s.Rollno == 100);
+            if (a!=null)
+            {
+                Console.WriteLine("Found");
+            }
+            else
+            {
+                Console.WriteLine("Not Found");
+            }
+            
 
             Console.Read();
         }
