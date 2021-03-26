@@ -1,0 +1,180 @@
+﻿WPF/WCF & WF r additions to .NET Framework in 3.0
+WCF- Indigo
+WCF is used for creating REST ful services
+REST-- Representational State Transfer
+HttpGet/HttpPost--- web projects
+WCF is create services to transfer data over the network, and moreover the
+it can work over any protocol.
+
+Remoting---- http/tcp for communication
+Web Services---http/https---xml
+WCF Services---- tcpip,http, https,udp,etc
+			xml,json
+
+Web API---- multiple devices support--- http
+								xml/json
+
+								WCF
+=====================================================================
+Windows Communication Foundation---free and open source
+It is used to create distributed and interoperable Application.
+This is a framework----- SOA(Service Oriented Architecture).
+
+1) Distributed Apps
+2) Interoperable 
+Rishav	--http						Tunir----tcp
+(Multiply,Addition)			     (Addition,Subtraction)
+Class A						
+{
+(Multiply,Addition)
+}
+
+
+
+
+Class B
+{
+Addition ,Subtraction
+}
+
+
+-------------------------------------
+Interface ---- Contract
+
+Interface Mixed
+{
+[OperationContract]
+Addition ,Subtraction,
+Multiply
+
+}
+
+
+
+Class C:Mixed---- 
+{
+Addition();
+Subtraction();
+Multiplication();
+
+
+}
+
+
+Class D:Mixed
+{
+Subtraction
+
+}
+
+Class E:Mixed
+{
+Multiply
+
+}
+
+------------------------------------------------
+SErvice Oriented Architecture
+
+
+ABC of WCF
+A-Address
+B- Binding-- protocol
+C-Contract
+1)
+Client ------Server1(http)-------Server2(tcpip)
+A-Address  -----A-Address------Address
+B- Binding ------B--Binding----- Binding
+C-Contract-------------------------------Contract
+
+2)Requirement 
+		1000	1000
+Gen Plan-AMS----USER1 & USER2
+
+
+Plan 1-A&S -----500
+Plan 2-A&M -----500
+Plan 3-M&S-------M & S
+
+
+------------------
+Parts of App
+1) WCF Service---what is the service and what is it providing
+2) WCF Service Host----- Where is service hosted
+3) Service Client------- Who is the client of the service
+
+Ios/Android/http-- server-----
+
+Binding-----mechanism of data travel -- http
+
+Fundamentals
+------------
+Message---- 
+client					Server
+			Request-----------------Envelope----packets
+	Header-------address
+	Body--data transmision
+
+Endpoint
+<endpoint address="" binding="" contract=""/>
+ A				A
+B				B
+C				C
+Schema://domain:port/path
+http://localhost:34234/MyService
+net.tcp://localhost:2342/MyService
+
+contract----
+functionality & operation is provided by the service is called as contract.
+It is exposed using interfacename
+
+hosting:
+IIS
+WAS
+Self Hosting
+
+SOAP----(Simple Object Access Protocol)
+It is not a transport protocol but XML based language  used for message exchange.
+
+using System.ServiceModel
+using System.Configuration
+using System.Runtime.Serialization
+using System.Web.ApplicationServices
+using System.EnterpriseServices
+---------------------------------------------------------
+
+Steps
+1) Take WCF service app
+2) check out for namespaces
+3) create interface methods
+4) if required create classes such as employees
+5) inherit interface in the service class
+implement the interface
+Buid the WCF Service app
+Execute the app--- from the service.svc window(WCF Test Client)
+or interface window(Browser)
+
+Copy the address of the service
+------------------------------
+KEEP THE SERVICE RUNNING
+-------------------------
+
+SERVICE CLIENT
+--------------
+Take WEB APP
+Add service reference from References-- put the service address and get the service
+reference
+create of proxy object of service class and invoke methods.
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,36 @@
+Class Library--
+1) Employee
+Properties--- Empid,Ename,
+Sal,Deptno,City
+
+2) EmpMgt 
+List<Employee> list=new List<Employee>();
+InsertEmployeeToList(Employee empdata)
+{
+ list.Add(empdata);
+
+}
+
+
+List<Employee> ShowListofEmployees()
+{
+
+return list
+}
+
+3) Console App
+Reference the library in the app
+main()
+{
+Create a employee object---emp
+Take all input from the user
+emp.empid=Convert.ToInt32(Console.ReadLine());
+
+
+EmpMgt empmgt=new EmpMgt();
+empmgt.InsertEmployeeToList(emp);------5 objects
+List<Employees> emplist=empmgt.ShowListofEmployees();
+foreach()===== display-----
+
+
+}
