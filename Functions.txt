@@ -1,0 +1,122 @@
+User Defined Functions in SQL Server(UDF)
+------------------------------------------
+
+	1) Scalar--- single value 
+	2) Inline----- returns table without table definition
+	3) Multi statement Table valued--- returns table with table definition
+
+Both 2 and 3 can be written to combine rows from  one or more tables.
+
+A function may accept parameters or may not have any parameters.
+If parameter accepted---- parameterised functions
+2 types of parameters
+1) in--- input---- giving/passing parameter--- default type of parameter
+2)out--- output------ when the functions returns the value in the out type
+of parameter it is output parameter,  which contains the value calculated.
+
+
+	create function function name
+	(@parametername datatype 
+[output],......
+)
+as 
+begin
+
+end;
+
+------------------------
+create function fn_calculateOrderValue
+(@orderid int)
+as 
+begin
+
+//code 
+end;
+
+----------------------------------------------
+public long ShowOrderValue(int orderid)
+{
+long orderamt;
+SqlCommand cmd=new SqlCommand("SELECT [dbo].[fn_nwCalculateOrderValue] (@orderid)",cn);
+cmd.Parameters.AddWithValue("@orderid",orderid);
+cn.Open();
+SqlDataReader dr=cmd.ExecuteReader();
+orderamt=Convert.toDouble(dr[0]);
+cn.Close();
+return orderamt;
+}
+---------------------------------------
+Examples
+1) Multi statement table valued function
+
+ALTER FUNCTION [dbo].[fn_MultiShowOrderData]
+(
+	-- Add the parameters for the function here
+	@orderid int
+	
+)
+RETURNS 
+@orderstable TABLE 
+(
+	-- Add the column definitions for the TABLE variable here
+	orderid int,
+	prodid int,
+	pname nvarchar(max),
+	price money,
+	dis real
+)
+AS
+BEGIN
+	-- Fill the table variable with the rows for your result set
+	insert into @orderstable 
+	select od.orderid,p.productid,p.productname,od.unitprice *
+	od.quantity,od.Discount
+from [Order Details] od,Products p
+where OrderID=@orderid and p.ProductID=od.productid
+	RETURN 
+END
+------------------------------------------------------------------------------
+
+2) Inline Table Valued Function
+
+ALTER FUNCTION [dbo].[fn_nwShowOrderDetails]
+(	
+	-- Add the parameters for the function here
+	@orderid int
+	
+)
+RETURNS TABLE 
+AS
+RETURN 
+(
+	-- Add the SELECT statement with parameter references here
+	select od.orderid,p.productid,p.productname,od.unitprice,od.quantity
+from [Order Details] od,Products p
+where OrderID=@orderid and p.ProductID=od.productid
+)
+
+---------------------------------------------------------------------
+3) Scalar Functions
+
+ALTER FUNCTION [dbo].[fn_nwCalculateOrderValue]
+(
+	-- Add the parameters for the function here
+	@orderid int
+)
+RETURNS money
+AS
+BEGIN
+	-- Declare the return variable here
+	DECLARE @orderamt money
+
+	-- Add the T-SQL statements to compute the return value here
+	--SELECT <@ResultVar, sysname, @Result> = <@Param1, sysname, @p1>
+
+	select @orderamt=sum(unitprice*quantity) from [order details]
+where orderid=@orderid
+group by orderid
+
+	-- Return the result of the function
+	RETURN @orderamt
+
+END
